@@ -100,6 +100,7 @@ no-op, CLI import, HCL import and recovery from a read error.
 | Object Storage | Known retention state after create; changed content/source path uploads equal-length new bytes in place; unchanged inputs do not re-upload; external deletion recovery and CLI import metadata. |
 | VPC recovery | A missing VPC is recreated; a failed create retains its ID for explicit replacement and cleanup. Polling returns deadline/cancellation errors. |
 | Block Storage | Attachment polling respects cancellation/deadlines while preserving its initial settling interval; a pending status cannot become success by timeout. Accepted attachments retain state on failure; real Terraform checks explicit replacement, detach-before-attach and no-op recovery. |
+| Kubernetes | Version/description changes update in place; subnet ordering and inherited values stay stable; CLI/HCL import; prevent_destroy; failed deletion preserves state; version/description/CIDR convergence across stale post-PATCH responses and eventual 404 handling. |
 
 ## Schema review
 
