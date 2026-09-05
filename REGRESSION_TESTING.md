@@ -98,6 +98,7 @@ no-op, CLI import, HCL import and recovery from a read error.
 | Framework | Unregistered hosts are rejected before transport; fixed-host aliases route to registered local TLS servers without changing the original SDK request. |
 | VPC baseline | Create and destroy exactly once, repeat apply without drift, CLI import verification, persisted HCL import without recreation, and preservation of state across a 403. |
 | Object Storage | Known retention state after create; changed content/source path uploads equal-length new bytes in place; unchanged inputs do not re-upload; external deletion recovery and CLI import metadata. |
+| VPC recovery | A missing VPC is recreated; a failed create retains its ID for explicit replacement and cleanup. Polling returns deadline/cancellation errors. |
 
 ## Schema review
 
